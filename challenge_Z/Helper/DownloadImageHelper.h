@@ -15,5 +15,5 @@
 @interface DownloadImageHelper : NSObject
 @property (nonatomic, strong) NSOperationQueue *downloadQueue;
 + (instancetype)shared;
--(void)downloadImageFromURLs:(NSArray<NSString *> *)urlStrings completion:(void (^)(UIImage *image))completion;
+- (void)downloadImageFromURLs:(NSArray<NSString *> *)urlStrings completion:(void (^)(UIImage *image))completion;
 @end

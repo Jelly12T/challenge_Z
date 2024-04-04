@@ -15,6 +15,8 @@
 		55308C6C2BBE55150006DDC7 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 55308C6B2BBE55150006DDC7 /* Base */; };
 		55308C6F2BBE55150006DDC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55308C6E2BBE55150006DDC7 /* main.m */; };
 		55308C762BBE558D0006DDC7 /* DownloadImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 55308C752BBE558D0006DDC7 /* DownloadImageHelper.m */; };
+		55308C7D2BBE62B90006DDC7 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55308C7C2BBE62B90006DDC7 /* ImageCell.xib */; };
+		55308C7E2BBE62B90006DDC7 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55308C7B2BBE62B90006DDC7 /* ImageCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,9 @@
 		55308C6E2BBE55150006DDC7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55308C752BBE558D0006DDC7 /* DownloadImageHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadImageHelper.m; sourceTree = "<group>"; };
 		55308C772BBE55E90006DDC7 /* DownloadImageHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadImageHelper.h; sourceTree = "<group>"; };
+		55308C7A2BBE62B90006DDC7 /* ImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
+		55308C7B2BBE62B90006DDC7 /* ImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
+		55308C7C2BBE62B90006DDC7 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +69,7 @@
 		55308C5B2BBE55140006DDC7 /* challenge_Z */ = {
 			isa = PBXGroup;
 			children = (
+				55308C792BBE629A0006DDC7 /* Cell */,
 				55308C782BBE561A0006DDC7 /* Helper */,
 				55308C5C2BBE55140006DDC7 /* AppDelegate.h */,
 				55308C5D2BBE55140006DDC7 /* AppDelegate.m */,
@@ -87,6 +93,16 @@
 				55308C772BBE55E90006DDC7 /* DownloadImageHelper.h */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		55308C792BBE629A0006DDC7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				55308C7A2BBE62B90006DDC7 /* ImageCell.h */,
+				55308C7B2BBE62B90006DDC7 /* ImageCell.m */,
+				55308C7C2BBE62B90006DDC7 /* ImageCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55308C692BBE55150006DDC7 /* Assets.xcassets in Resources */,
+				55308C7D2BBE62B90006DDC7 /* ImageCell.xib in Resources */,
 				55308C6C2BBE55150006DDC7 /* Base in Resources */,
 				55308C672BBE55140006DDC7 /* Base in Resources */,
 			);
@@ -160,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55308C642BBE55140006DDC7 /* ViewController.m in Sources */,
+				55308C7E2BBE62B90006DDC7 /* ImageCell.m in Sources */,
 				55308C5E2BBE55140006DDC7 /* AppDelegate.m in Sources */,
 				55308C762BBE558D0006DDC7 /* DownloadImageHelper.m in Sources */,
 				55308C6F2BBE55150006DDC7 /* main.m in Sources */,
