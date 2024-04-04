@@ -6,6 +6,7 @@
 //
 
 #import "ImageCell.h"
+#import "DownloadImageHelper.h"
 
 @implementation ImageCell
 

@@ -17,6 +17,7 @@
 		55308C762BBE558D0006DDC7 /* DownloadImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 55308C752BBE558D0006DDC7 /* DownloadImageHelper.m */; };
 		55308C7D2BBE62B90006DDC7 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55308C7C2BBE62B90006DDC7 /* ImageCell.xib */; };
 		55308C7E2BBE62B90006DDC7 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55308C7B2BBE62B90006DDC7 /* ImageCell.m */; };
+		5581FDD42BBE98C6007A9683 /* CacheImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5581FDD32BBE98C6007A9683 /* CacheImageHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		55308C7A2BBE62B90006DDC7 /* ImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
 		55308C7B2BBE62B90006DDC7 /* ImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
 		55308C7C2BBE62B90006DDC7 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		5581FDD32BBE98C6007A9683 /* CacheImageHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CacheImageHelper.m; sourceTree = "<group>"; };
+		5581FDD52BBE98CF007A9683 /* CacheImageHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheImageHelper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 			children = (
 				55308C752BBE558D0006DDC7 /* DownloadImageHelper.m */,
 				55308C772BBE55E90006DDC7 /* DownloadImageHelper.h */,
+				5581FDD32BBE98C6007A9683 /* CacheImageHelper.m */,
+				5581FDD52BBE98CF007A9683 /* CacheImageHelper.h */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			files = (
 				55308C642BBE55140006DDC7 /* ViewController.m in Sources */,
 				55308C7E2BBE62B90006DDC7 /* ImageCell.m in Sources */,
+				5581FDD42BBE98C6007A9683 /* CacheImageHelper.m in Sources */,
 				55308C5E2BBE55140006DDC7 /* AppDelegate.m in Sources */,
 				55308C762BBE558D0006DDC7 /* DownloadImageHelper.m in Sources */,
 				55308C6F2BBE55150006DDC7 /* main.m in Sources */,

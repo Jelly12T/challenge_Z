@@ -7,14 +7,14 @@
 
 #import <Foundation/Foundation.h>
 #import "DownloadImageHelper.h"
- 
+
 @implementation DownloadImageHelper
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _downloadQueue = [[NSOperationQueue alloc] init];
-        _downloadQueue.maxConcurrentOperationCount = 4;
+        _queue = [[NSOperationQueue alloc] init];
+        _queue.maxConcurrentOperationCount = 4;
     }
     return self;
 }
@@ -30,6 +30,10 @@
 
 
 - (void)downloadImageFromURLs:(NSArray<NSString *> *)urlStrings completion:(void (^__strong)(UIImage *__strong))completion {
+    dispatch_group_t downloadGroup = dispatch_group_create();
+}
+
+-(void)downloadImageFromURL:(NSString *)urlString completion:(void (^__strong)(UIImage *__strong))completion { 
 }
 
 @end

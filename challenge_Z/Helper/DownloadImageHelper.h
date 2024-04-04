@@ -13,7 +13,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DownloadImageHelper : NSObject
-@property (nonatomic, strong) NSOperationQueue *downloadQueue;
+@property (nonatomic, strong) NSOperationQueue *queue;
 + (instancetype)shared;
 - (void)downloadImageFromURLs:(NSArray<NSString *> *)urlStrings completion:(void (^)(UIImage *image))completion;
 @end
