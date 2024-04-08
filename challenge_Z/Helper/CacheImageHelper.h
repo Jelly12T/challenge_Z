@@ -13,9 +13,11 @@
 #import <UIKit/UIKit.h>
 
 @interface CacheImageHelper : NSObject
+@property (nonatomic, strong) NSCache *ramCache;
+@property (nonatomic, strong) NSString *diskCachePath;
+@property (nonatomic, assign) NSUInteger totalCapacityRamCache;
 
-+ (instancetype _Nonnull)shared;
-- (void)cacheImageWithURL:(NSString * _Nonnull)imageURL image:(UIImage * _Nonnull)image;
-- (UIImage * _Nullable)getImageCached:(NSString * _Nonnull)imageURL;
-
++ (id)shared;
+- (void)addCacheImage:(UIImage *)image forKey:(NSString *)key;
+- (UIImage *)getImageCachedForKey:(NSString *)key;
 @end
