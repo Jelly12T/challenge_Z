@@ -11,9 +11,12 @@
 
 #endif /* DownloadImageHelper_h */
 #import <UIKit/UIKit.h>
+#import "ImageDownloadTask.h"
+#import "CacheImageHelper.h"
 
 @interface DownloadImageHelper : NSObject
 @property (nonatomic, strong) NSOperationQueue *queue;
-+ (instancetype)shared;
-- (void)downloadImageFromURLs:(NSArray<NSString *> *)urlStrings completion:(void (^)(UIImage *image))completion;
+@property (nonatomic, strong) NSMutableDictionary<NSURL *, ImageDownloadTask *> *tasks;
+- (void)cancelDownloadForURL:(NSURL *)url;
+- (void)downloadImageWithURL:(NSURL *)url completion:(void (^)(UIImage *))completion;
 @end

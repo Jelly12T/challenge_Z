@@ -6,15 +6,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
-NS_ASSUME_NONNULL_BEGIN
+#import "DownloadImageHelper.h"
 
 @interface ImageCell : UITableViewCell
+@property (nonatomic, strong) NSURL *currentURL;
+@property (nonatomic, strong) DownloadImageHelper *downloadHelper;
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnailImage;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingView;
 
-- (void)bindData: (UIImage *)image;
+- (void)bindDataWithURLString:(NSString *)urlString;
 - (void)updateLoadingView: (BOOL)isShow;
 @end
 
-NS_ASSUME_NONNULL_END

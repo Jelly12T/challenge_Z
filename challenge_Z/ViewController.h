@@ -9,6 +9,7 @@
 
 @interface ViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
+@property(nonatomic, strong) NSMutableArray *urlStrings;
 @property (weak, nonatomic) IBOutlet UITableView *imageTableView;
 
 @end

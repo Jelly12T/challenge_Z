@@ -10,7 +10,6 @@
 #import "Helper/DownloadImageHelper.h"
 
 @interface ViewController ()
-@property (nonatomic, strong) DownloadImageHelper *downloadImageHelper;
 @end
 
 @implementation ViewController
@@ -21,14 +20,10 @@
 }
 
 - (void)config {
-    [self configDownloadImageHelper];
-    [self configTableView];
     [self fetchData];
+    [self configTableView];
 }
 
-- (void)configDownloadImageHelper {
-    self.downloadImageHelper = [DownloadImageHelper shared];
-}
 
 - (void)configTableView {
     [self.imageTableView registerNib:[UINib nibWithNibName:@"ImageCell" bundle:nil] forCellReuseIdentifier:@"ImageCell"];
@@ -37,7 +32,12 @@
 }
 
 - (void)fetchData {
-    
+    const NSInteger maxItems = 100;
+    self.urlStrings = [NSMutableArray array];
+    for (int i = 0; i < maxItems; i++) {
+        NSString *urlString = [NSString stringWithFormat:@"https://github.com/linhnd99/Image2K/blob/main/%03d.png?raw=true", i];
+        [self.urlStrings addObject:urlString];
+    }
 }
 
 #pragma mark - UITableViewDataSource Methods
@@ -46,7 +46,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.urlStrings.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -56,6 +56,7 @@
         return  [UICollectionViewCell init];
     }
     
+    [cell bindDataWithURLString:self.urlStrings[indexPath.row]];
     return cell;
 }
 

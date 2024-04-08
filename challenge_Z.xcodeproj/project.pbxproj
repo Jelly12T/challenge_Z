@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		551CC0502BC3D0A400B45BC6 /* ImageDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 551CC04F2BC3D0A400B45BC6 /* ImageDownloadTask.m */; };
 		55308C5E2BBE55140006DDC7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55308C5D2BBE55140006DDC7 /* AppDelegate.m */; };
 		55308C612BBE55140006DDC7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55308C602BBE55140006DDC7 /* SceneDelegate.m */; };
 		55308C642BBE55140006DDC7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55308C632BBE55140006DDC7 /* ViewController.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		551CC04E2BC3D07E00B45BC6 /* ImageDownloadTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDownloadTask.h; sourceTree = "<group>"; };
+		551CC04F2BC3D0A400B45BC6 /* ImageDownloadTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadTask.m; sourceTree = "<group>"; };
 		55308C592BBE55140006DDC7 /* challenge_Z.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = challenge_Z.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55308C5C2BBE55140006DDC7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		55308C5D2BBE55140006DDC7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 				55308C772BBE55E90006DDC7 /* DownloadImageHelper.h */,
 				5581FDD32BBE98C6007A9683 /* CacheImageHelper.m */,
 				5581FDD52BBE98CF007A9683 /* CacheImageHelper.h */,
+				551CC04E2BC3D07E00B45BC6 /* ImageDownloadTask.h */,
+				551CC04F2BC3D0A400B45BC6 /* ImageDownloadTask.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 				55308C7E2BBE62B90006DDC7 /* ImageCell.m in Sources */,
 				5581FDD42BBE98C6007A9683 /* CacheImageHelper.m in Sources */,
 				55308C5E2BBE55140006DDC7 /* AppDelegate.m in Sources */,
+				551CC0502BC3D0A400B45BC6 /* ImageDownloadTask.m in Sources */,
 				55308C762BBE558D0006DDC7 /* DownloadImageHelper.m in Sources */,
 				55308C6F2BBE55150006DDC7 /* main.m in Sources */,
 				55308C612BBE55140006DDC7 /* SceneDelegate.m in Sources */,

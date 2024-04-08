@@ -7,33 +7,43 @@
 
 #import <Foundation/Foundation.h>
 #import "DownloadImageHelper.h"
+#import "ImageDownloadTask.h"
 
 @implementation DownloadImageHelper
 
-- (instancetype)init {
+- (id)init {
     self = [super init];
     if (self) {
-        _queue = [[NSOperationQueue alloc] init];
-        _queue.maxConcurrentOperationCount = 4;
+        self.queue = [[NSOperationQueue alloc] init];
+        self.queue.maxConcurrentOperationCount = 4;
     }
     return self;
 }
 
-+ (instancetype)shared {
-    static DownloadImageHelper *instance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [[self alloc] init];
+- (void)downloadImageWithURL:(NSURL *)url completion:(void (^)(UIImage *))completion {
+    UIImage *image = [[CacheImageHelper shared] getImageCachedForKey:url.path];
+    if(image) {
+        NSLog(@"JELLY have cache");
+        completion(image);
+        return;
+    }
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        ImageDownloadTask *task = [[ImageDownloadTask alloc] initWithURL:url completion:^(UIImage *imageDownloaded) {
+            if(imageDownloaded) {
+                [[CacheImageHelper shared] addCacheImage:imageDownloaded forKey:url.path];
+            }
+            
+            completion(imageDownloaded);
+        }];
+        
+        [self.queue addOperation:task];
     });
-    return instance;
 }
 
-
-- (void)downloadImageFromURLs:(NSArray<NSString *> *)urlStrings completion:(void (^__strong)(UIImage *__strong))completion {
-    dispatch_group_t downloadGroup = dispatch_group_create();
-}
-
--(void)downloadImageFromURL:(NSString *)urlString completion:(void (^__strong)(UIImage *__strong))completion { 
+- (void)cancelDownloadForURL:(NSURL *)url {
+    ImageDownloadTask *task = self.tasks[url];
+    [task cancel];
+    [self.tasks removeObjectForKey:url];
 }
 
 @end
