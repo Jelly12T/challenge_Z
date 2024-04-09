@@ -17,6 +17,7 @@ NSUInteger maxRamCache = 30 * 1024 * 1024;
     dispatch_once(&onceToken, ^{
         shared = [[self alloc] init];
     });
+    
     return shared;
 }
 
@@ -31,6 +32,7 @@ NSUInteger maxRamCache = 30 * 1024 * 1024;
             [[NSFileManager defaultManager] createDirectoryAtPath:self.diskCachePath withIntermediateDirectories:YES attributes:nil error:nil];
         }
     }
+    
     return self;
 }
 
@@ -51,6 +53,7 @@ NSUInteger maxRamCache = 30 * 1024 * 1024;
         NSString *filePath = [self.diskCachePath stringByAppendingPathComponent:key];
         imageData = [NSData dataWithContentsOfFile:filePath];
     }
+        
     return imageData ? [UIImage imageWithData:imageData] : nil;
 }
 

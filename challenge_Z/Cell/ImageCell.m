@@ -18,20 +18,19 @@
 - (void)prepareForReuse {
     [super prepareForReuse];
     
-    if( self.thumbnailImage.image == nil) {
-        [self.downloadHelper cancelDownloadForURL:self.currentURL];
-
-    }
-    
-    [self updateLoadingView:false];
     self.thumbnailImage.image = nil;
-    
+    [self.downloadHelper cancelDownloadForURL:self.currentURL];
+    [self updateLoadingView:false];
 }
 
 - (void)bindDataWithURLString:(NSString *)urlString  {
     [self updateLoadingView:false];
     self.currentURL = [NSURL URLWithString:urlString];
     [self.downloadHelper downloadImageWithURL:self.currentURL completion:^(UIImage *image) {
+        if(!image) {
+            return;
+        }
+        
         [self updateLoadingView:true];
         dispatch_async(dispatch_get_main_queue(), ^{
             self.thumbnailImage.image = image;
